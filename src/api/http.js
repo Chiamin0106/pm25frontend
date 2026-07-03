@@ -2,9 +2,7 @@ import axios from 'axios'
 
 // 建立共用 axios 實例，所有前端 API 都會從這裡送到 Express 後端。
 const api = axios.create({
-  // 後端 server.js 監聽在 localhost:3000。
-  baseURL: 'http://localhost:3000',
-  // 告訴後端這次傳送與接收的資料格式是 JSON。
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000',
   headers: {
     'Content-Type': 'application/json',
   },
