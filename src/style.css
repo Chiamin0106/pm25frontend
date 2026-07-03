@@ -1,0 +1,143 @@
+/* 設定整個頁面的底色。 */
+html {
+  /* 設定背景顏色 */
+  background: #f8fafc;
+}
+
+/* 移除瀏覽器預設外距，避免頁面四周有白邊。 */
+body {
+  /* 移除外邊距 */
+  margin: 0;
+  /* 設定最小寬度為 320px */
+  min-width: 320px;
+}
+
+/* Vue 掛載容器至少撐滿整個視窗高度。 */
+#app {
+  /* 設定最小高度為視窗高度的 100% */
+  min-height: 100vh;
+}
+
+/* Ant Design Layout 的外層背景與高度。 */
+.app-shell {
+  /* 設定最小高度為 100vh，並設定背景顏色 */
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+/* 主內容置中，並限制最大寬度，避免寬螢幕過度拉伸。 */
+.app-content {
+  /* 寬度取 1200px 或 (視窗寬度減 32px) 兩者中的較小值 */
+  width: min(1200px, calc(100% - 32px));
+  /* 區塊水平置中 */
+  margin: 0 auto;
+  /* 設定內邊距：上 24px、左右 0、下 48px */
+  padding: 24px 0 48px;
+}
+
+.full-width {
+  /* 寬度設為 100% */
+  width: 100%;
+}
+
+.page-title {
+  /* 強制設定上外邊距為 4px，左右下為 0 */
+  margin: 4px 0 0 !important;
+}
+
+.status-alert {
+  /* 設定上外邊距為 16px */
+  margin-top: 16px;
+}
+
+/* 統一卡片標題大小與置中方式。 */
+.primary-chart-card .ant-card-head-title,
+.secondary-card .ant-card-head-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Chart.js canvas 的固定高度容器。 */
+.chart-box {
+  /* 設定為相對定位 */
+  position: relative;
+  /* 鎖定高度為 420px，寬度 100% */
+  height: 420px;
+  width: 100%;
+}
+
+.custom-chart {
+  /* 設定上外邊距 20px，高度 360px */
+  margin-top: 20px;
+  height: 360px;
+}
+
+/* 月份查詢可能超過螢幕寬度，所以允許水平捲動。 */
+.custom-chart-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.chart-empty {
+  /* 設定為絕對定位 */
+  position: absolute;
+  /* 讓上下左右距離皆為 0 (貼齊父元素邊緣) */
+  inset: 0;
+  /* 開啟 Flex 排版，並讓內容水平與垂直置中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 設定帶有 80% 不透明度的白色背景 */
+  background: rgb(255 255 255 / 80%);
+}
+
+.record-card {
+  /* 高度設為父元素的 100% */
+  height: 100%;
+}
+
+/* 圖表紀錄卡片標題與刪除按鈕左右排列。 */
+.record-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+/* 標題佔滿剩餘空間，避免與刪除按鈕重疊。 */
+.record-title {
+  flex: 1;
+  margin: 0 !important;
+  line-height: 1.45 !important;
+}
+
+/* 刪除按鈕固定寬度，不被標題擠壓。 */
+.record-delete-button {
+  flex: 0 0 auto;
+}
+
+.record-meta {
+  margin-bottom: 8px;
+}
+
+.record-details {
+  margin-top: 2px;
+}
+
+.record-created {
+  display: block;
+  margin-top: 8px;
+}
+
+/* 讓 Chart.js canvas 填滿父層 chart-box。 */
+canvas {
+  /* 顯示屬性改為區塊元素 (block) */
+  display: block;
+  /* 寬高皆設為 100% */
+  width: 100%;
+  height: 100%;
+}
