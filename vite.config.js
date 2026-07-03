@@ -5,4 +5,8 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   // Vue plugin 讓 Vite 可以解析 .vue 單檔元件。
   plugins: [vue()],
+    server: {
+    host: '0.0.0.0', // 允許外部連線
+    port: 5173
+  }
 })
